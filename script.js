@@ -51,6 +51,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   },
 
+ eventContent: function(info) {
+
+    if (info.event.extendedProps.type === "event") {
+
+      const container = document.createElement("div");
+
+      container.innerHTML = `
+        <img
+          src="./images/twitch-logo.svg"
+          style="width:16px;height:16px;vertical-align:middle;margin-right:4px;"
+        >
+        ${info.event.title}
+        (${info.event.extendedProps.start}-${info.event.extendedProps.end})
+      `;
+
+      return { domNodes: [container] };
+    }
+
+    return;
+  },
+    
     buttonText: {
       today: "Aujourd’hui",
       month: "Mois",
@@ -229,7 +250,7 @@ async function loadAll() {
 
     events.push({
       id: d.id,
-      title: `${data.player} (${data.start}-${data.end})`,
+      title: `🎙 ${data.player} (${data.start}-${data.end})`,
       start: data.date,
       backgroundColor: "#3c9195",   // 👈 couleur joueurs
       borderColor: "#3c9195",
@@ -243,7 +264,7 @@ async function loadAll() {
 
     events.push({
       id: d.id,
-      title: `🎮 ${data.title} (${data.start}-${data.end})`,
+      title: data.title,
       start: data.date,
       backgroundColor: "#a970ff",   // 👈 couleur events
       textColor: "#000000",
