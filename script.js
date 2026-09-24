@@ -66,11 +66,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         (${info.event.extendedProps.start}-${info.event.extendedProps.end})
       `;
 
-      return { domNodes: [container] };
-    }
+       } else {
 
-    return;
-  },
+    container.innerHTML = `
+      ${info.event.title}
+    `;
+
+  }
+
+  return { domNodes: [container] };
+},
     
     buttonText: {
       today: "Aujourd’hui",
