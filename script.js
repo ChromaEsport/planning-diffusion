@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
  eventContent: function(info) {
 
-    if (info.event.extendedProps.type === "event") {
+       const container = document.createElement("div");
 
-      const container = document.createElement("div");
+    if (info.event.extendedProps.type === "event") {
 
       container.innerHTML = `
         <img
