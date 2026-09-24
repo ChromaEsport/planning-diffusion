@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       container.innerHTML = `
         <img
-          src="./images/twitch-logo.svg"
+          src="./twitch-logo.png"
           style="width:16px;height:16px;vertical-align:middle;margin-right:4px;"
         >
         ${info.event.title}
