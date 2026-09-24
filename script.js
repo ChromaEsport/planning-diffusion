@@ -238,8 +238,10 @@ async function loadAll() {
       title: `🎮 ${data.title} (${data.start}-${data.end})`,
       start: data.date,
       backgroundColor: "#a970ff",   // 👈 couleur events
-      borderColor: "##a970ff",
+      borderColor: "000000",
       textColor: "#000000",
+      padding: "5px",
+      border: "3px solid #000000",
       extendedProps: { ...data, type: "event", participants: data.participants || {} }
     });
   });
