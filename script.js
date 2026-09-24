@@ -43,6 +43,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     locale: "fr",
     firstDay: 1,
 
+    eventDidMount: function(info) {
+    if (info.event.extendedProps.type === "event") {
+      info.el.style.padding = "5px";
+      info.el.style.border = "3px solid #000000";
+      info.el.style.boxSizing = "border-box";
+    }
+  },
+
     buttonText: {
       today: "Aujourd’hui",
       month: "Mois",
@@ -239,8 +247,6 @@ async function loadAll() {
       start: data.date,
       backgroundColor: "#a970ff",   // 👈 couleur events
       textColor: "#000000",
-      padding: "5px !important",
-      border: "3px solid #000000 !important",
       extendedProps: { ...data, type: "event", participants: data.participants || {} }
     });
   });
