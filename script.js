@@ -237,8 +237,8 @@ async function loadAll() {
       id: d.id,
       title: `🎮 ${data.title} (${data.start}-${data.end})`,
       start: data.date,
-      backgroundColor: "#ffa83b",   // 👈 couleur events
-      borderColor: "#ffa83b",
+      backgroundColor: "#a970ff",   // 👈 couleur events
+      borderColor: "##a970ff",
       textColor: "#000000",
       extendedProps: { ...data, type: "event", participants: data.participants || {} }
     });
