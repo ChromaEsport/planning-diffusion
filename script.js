@@ -241,7 +241,7 @@ async function loadAll() {
       borderColor: "000000",
       textColor: "#000000",
       padding: "5px",
-      border: "3px solid #000000",
+      border: "3px solid #000000 !important",
       extendedProps: { ...data, type: "event", participants: data.participants || {} }
     });
   });
